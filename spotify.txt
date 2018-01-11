@@ -1,0 +1,5 @@
+liri-node-app
+Language Interpretation and Recognition Interface
+
+Client ID 30eac0eb2b1145bd9fcf0b335125a0eb
+Client Secret 2fe67cb6ee5d42e9ae68893ff4caf08a 
