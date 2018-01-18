@@ -1,3 +1,4 @@
+omdb: function(movieThis) {
 // Include the request npm package (Don't forget to run "npm install request" in this folder first!)
 var request = require("request");
 
@@ -5,7 +6,7 @@ var request = require("request");
 var nodeArgs = process.argv;
 
 // Create an empty variable for holding the movie name
-var movieName = "";
+var movieName = "Mr Nobody";
 
 // Loop through all the words in the node argument
 // And do a little for-loop magic to handle the inclusion of "+"s
@@ -37,6 +38,15 @@ request(queryUrl, function(error, response, body) {
 
     // Parse the body of the site and recover just the imdbRating
     // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
+
+    console.log("Title: " + JSON.parse(body).Title);
     console.log("Release Year: " + JSON.parse(body).Year);
+    console.log("IMDB Rating: " + JSON.parse(body).Ratings[0].Value);
+    console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Title);
+    console.log("Produced in: " + JSON.parse(body).Country);
+    console.log("Release Year: " + JSON.parse(body).Year);
+    console.log("Language: " + JSON.parse(body).Language);
+    console.log("Plot: " + JSON.parse(body).Plot);
+    console.log("Starring: " + JSON.parse(body).Actors);
+
   }
-});
